@@ -3,11 +3,13 @@ const errorElement = document.querySelectorAll('[data-text="error"]');
 
 const submitButton = document.querySelector('[data-button="submit"]');
 
+let hasError = false;
+
 function validate(e) {
   e.preventDefault();
 
   inputs.forEach((input, e) => {
-    if (input.value === '') {
+    if (input.value === '' && hasError === false) {
       input.classList.add('input-error');
       createErrorText(input);
     }
@@ -15,6 +17,7 @@ function validate(e) {
 }
 
 function createErrorText(input) {
+  hasError = true;
   const errorTextElement = document.createElement('p');
   errorTextElement.classList.add('error');
   const text = document.createTextNode(`${input.placeholder} cannot be empty`);
@@ -31,6 +34,13 @@ inputs.forEach((input, e) => {
   input.addEventListener('click', function () {
     if (input.classList.contains('input-error')) {
       input.classList.remove('input-error');
+
+      hasError = false;
+
+      const errorMessages = document.querySelectorAll('.error');
+      errorMessages.forEach((message) => {
+        message.remove();
+      });
     }
   });
 });

@@ -153,9 +153,11 @@ form {
   margin-bottom: 1em;
 }
 
-input {
+input,
+input:autofill {
   width: 100%;
   color: hsl(var(--color-neutral-800));
+  background-color: hsl(var(--color-neutral-100));
   font-size: 0.875em;
   font-weight: var(--fw-semibold);
   padding: 1rem;
