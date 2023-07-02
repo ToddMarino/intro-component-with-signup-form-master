@@ -1,0 +1,268 @@
+/* form container:  543 x 475 with padding 39px */
+/* right header container: 543 x 60 */
+/* input: 460 x 55 */
+/* phone 133.66 */
+
+:root {
+  --color-red: 0, 100%, 74%;
+  --color-green: 154, 59%, 51%;
+  --color-blue: 248, 32%, 49%;
+  --color-neutral-800: 249, 10%, 26%;
+  --color-neutral-300: 246, 25%, 77%;
+  --color-neutral-100: 0, 0%, 100%;
+
+  --ff-primary: 'Poppins', sans-serif;
+
+  --fs-body: 16px;
+
+  --fw-light: 400;
+  --fw-normal: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --shadow-elevation-medium: 0px 0.4px 0.3px
+      hsl(var(--color-neutral-800) / 0.37),
+    0.1px 7.2px 5.9px -4.5px hsl(var(--color-neutral-800) / 0.21);
+}
+
+/* --- Reset --- */
+/*  https://www.joshwcomeau.com/css/custom-css-reset/  */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  background-color: hsl(var(--color-red));
+  background-image: url('./images/bg-intro-mobile.png');
+  background-blend-mode: overlay 0.5;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-normal);
+}
+
+main {
+  min-width: 375px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+section[data-type='text'] {
+  color: hsl(var(--color-neutral-100));
+  text-align: center;
+  max-width: 540px;
+}
+
+section[data-type='text'] > h1 {
+  font-size: 1.625rem;
+  padding: 1rem 1rem;
+  font-weight: var(--fw-bold);
+}
+
+section[data-type='text'] > p {
+  padding: 0.5rem;
+  font-weight: var(--fw-normal);
+}
+
+section[data-type='form'] {
+  margin-top: 2.5rem;
+  max-width: 540px;
+}
+
+section[data-type='form'] > div {
+  background-color: hsl(var(--color-blue));
+  padding: 1rem 3rem;
+  border-radius: 8px;
+  color: hsla(var(--color-neutral-100), 0.8);
+  font-size: 1em;
+  font-weight: var(--fw-light);
+  text-align: center;
+}
+
+strong {
+  font-weight: var(--fw-semibold);
+}
+
+form {
+  background-color: hsl(var(--color-neutral-100));
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1em;
+}
+
+input {
+  width: 100%;
+  color: hsl(var(--color-neutral-800));
+  font-size: 0.875em;
+  font-weight: var(--fw-semibold);
+  padding: 1rem;
+  border: 1px solid hsla(var(--color-neutral-300), 0.5);
+  border-radius: 6px;
+}
+
+input::placeholder {
+  color: hsl(var(--color-neutral-800));
+}
+
+.error {
+  color: hsl(var(--color-red));
+  font-weight: var(--fw-light);
+  font-size: 10px;
+  text-align: right;
+  padding-block: 0.5em;
+}
+
+button[data-button='submit'] {
+  color: white;
+  text-transform: uppercase;
+  font-weight: var(--fw-normal);
+  background-color: hsl(var(--color-green));
+  border: none;
+  border-radius: 6px;
+  padding-block: 1rem;
+  cursor: pointer;
+}
+
+button[data-button='submit']:is(:hover, :focus) {
+  background-color: hsla(var(--color-green), 0.75);
+}
+
+.text-tos {
+  font-size: 0.75em;
+  font-weight: var(--fw-light);
+  color: hsl(var(--color-neutral-300));
+  text-align: center;
+  padding-inline: 0.75rem;
+}
+
+.text-tos a {
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+  color: hsl(var(--color-red));
+}
+
+.hidden {
+  display: none;
+}
+
+.input-error {
+  color: hsl(var(--color-red));
+  border-color: hsl(var(--color-red));
+  border-width: 2px;
+  background-image: url('./images/icon-error.svg');
+  background-repeat: no-repeat;
+  background-position: right 1.125em center;
+}
+
+.input-error::placeholder {
+  color: hsl(var(--color-red));
+}
+.input:active {
+  border-color: hsl(var(--colorneutral-800));
+}
+
+.shadow {
+  box-shadow: 0 10px 2px -2px hsla(var(--color-neutral-800), 0.25);
+}
+
+@media (min-width: 650px) {
+  body {
+    background-image: url('./images/bg-intro-desktop.png');
+    display: grid;
+    place-content: center;
+  }
+  main {
+    /* width: 100vw; */
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 70px;
+    justify-content: space-between;
+  }
+  section[data-type='text'] {
+    max-width: 540px;
+    text-align: left;
+  }
+  section[data-type='text'] > h1 {
+    font-size: calc(1.625rem * 2);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+  form {
+    background-color: hsl(var(--color-neutral-100));
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  button[data-button='submit'] {
+    margin-bottom: 1rem;
+  }
+  section[data-type='form'] {
+    margin: 0;
+  }
+}
