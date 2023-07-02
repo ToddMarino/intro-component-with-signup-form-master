@@ -239,10 +239,13 @@ button[data-button='submit']:is(:hover, :focus) {
   main {
     /* width: 100vw; */
     max-width: 1440px;
+    height: 100vh;
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 70px;
     justify-content: space-between;
+    align-content: center;
   }
   section[data-type='text'] {
     max-width: 540px;
